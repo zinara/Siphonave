@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AddbuttonComponent } from './addbutton.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -101,7 +102,9 @@ import {
     MatSortModule,
     MatTableModule,
     MatTabsModule,
-    MatStepperModule
+    MatStepperModule,
+    AddbuttonComponent
   ],
+  declarations: [AddbuttonComponent],
 })
 export class MaterialModule { }
