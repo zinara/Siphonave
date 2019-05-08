@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  title = 'My List';
+
   constructor() { }
 
   ngOnInit() {

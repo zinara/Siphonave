@@ -1,31 +1,11 @@
-mat-toolbar {
-    color: black;
-    width: 27rem;
-    height: 110px;
-}
-
-/*.logo {
-    font-size: 1rem;
-    margin-right: 12px;
-}*/
-
-.more-icon {
+.example-icon {
     padding: 0 14px;
   }
   
-  .toolbar-spacer {
+  .example-spacer {
     flex: 1 1 auto;
   }
   
- .menu-row {
-      padding-left: 2px;
-      display: flex;
-      align-content: center; 
+  button:focus {
+    outline: none;
   }
-
-  a:focus a:active {
-      color: rgb(92, 87, 87);
-      outline: 0 none;
-  }
-
-  

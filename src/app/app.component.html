@@ -1,31 +1,53 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <h4 class="mat-h4 mat-subheading-1"><span>Dump</span></h4>
+ <mat-toolbar color="primary" *ngIf="!isScreenSmall(); else icon" >
 
-    <span class="toolbar-spacer"></span>
-    <mat-icon class="More-icon" aria-hidden="false" aria-label="more">more_vert</mat-icon>
-  </mat-toolbar-row>
+   <mat-toolbar-row>
+     <span class=".mat-h2 .mat-title">Dump</span>
+     <span class="example-spacer"></span>
+     <div fxLayout="row" fxLayoutAlign="space-around center">
+       <button mat-button [routerLink]="['/home']" routerLinkActive>
+         Home
+       </button>
+       <button mat-button [routerLink]="['/mylist']" routerLinkActive>
+         My List
+       </button>
+       <button mat-button [routerLink]="['/mycards']" routerLinkActive>
+         My Cards
+       </button>
+       <button mat-button [routerLink]="['/curiosity']" routerLinkActive>
+         Curiosity waves
+       </button>
+       <mat-icon class="example-icon" aria-hidden="false" aria-label="more options">more_vert</mat-icon>
+     </div>
+   </mat-toolbar-row>
+ </mat-toolbar>
 
-  <mat-toolbar-row class="menu-row">
+ <ng-template #icon>
+   <mat-toolbar color="primary">
 
-    <nav mat-tab-nav-bar aria-label="menu-link" animationDuration="2000ms">
-      <a mat-tab-link class="menu-link" [routerLink]="['/home']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
-        Home
-      </a>
-      <a mat-tab-link class="menu-link" [routerLink]="['/mylist']" routerLinkActive #rlm="routerLinkActive" [active]="rlm.isActive">
-        My List
-      </a>
-      <a mat-tab-link class="menu-link" [routerLink]="['/mycards']" routerLinkActive #rln="routerLinkActive" [active]="rln.isActive">
-        My Cards
-      </a>
-      <a mat-tab-link class="menu-link" [routerLink]="['/curiosity']" routerLinkActive #rlo="routerLinkActive" [active]="rlo.isActive">
-        Curiosity Circle
-      </a>
-    </nav>
+     <mat-toolbar-row>
+       <span class=".mat-h2 .mat-title">Dump</span>
+       <span class="example-spacer"></span>
+       <div fxLayout="row" fxLayoutAlign="space-around center">
+         <button mat-icon-button aria-label=" Home icon" [routerLink]="['/home']" routerLinkActive>
+           <mat-icon>home</mat-icon>
+         </button>
+         <button mat-icon-button aria-label="list" [routerLink]="['/mylist']" routerLinkActive>
+           <mat-icon>list</mat-icon>
+         </button>
+         <button mat-icon-button aria-label="card icon" [routerLink]="['/mycards']" routerLinkActive>
+           <mat-icon>class</mat-icon>
+         </button>
+      <!--   <button mat-icon-button aria-label="circle icon" [routerLink]="['/curiosity']" routerLinkActive>
+           <mat-icon>waves</mat-icon>
+         </button> -->
+         <mat-icon class="example-icon" aria-hidden="false" aria-label="more options">more_vert</mat-icon>
+       </div>
+     </mat-toolbar-row>
+
+   </mat-toolbar>
+ </ng-template>
 
 
-  </mat-toolbar-row>
-</mat-toolbar>
-
-
-<router-outlet></router-outlet>
+ 
+   <router-outlet></router-outlet>
+ 
