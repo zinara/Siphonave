@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CuriosityComponent implements OnInit {
 
-title = 'Curiosity waves';
+title = 'Curiosity web';
 
   constructor() { }
 
