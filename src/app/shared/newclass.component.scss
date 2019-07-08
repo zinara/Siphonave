@@ -1,0 +1,39 @@
+.new-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+   // text-indent: -4000px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 100px;
+    right: 16px;
+    border: none;
+    will-change: transform;
+  
+    box-shadow: 0 8px 11px 1px rgba(0, 0, 0, 0.14),
+          0 3px 16px 2px rgba(0, 0, 0, 0.12),
+          0 5px 5px -3px rgba(0, 0, 0, 0.2); 
+  
+    &.pending {
+      transition: background-color 0.3s cubic-bezier(0,0,0.21,1) 0.5s;
+      background-color: gray;
+    }
+  }
+  
+  .new-btn:focus {
+    outline: none;
+  } 
+  
+  @media(min-width: 600px) {
+    .new-btn {
+      right: 24px;
+    }
+  }
+  
+  @media(min-width: 960px) {
+    .new-btn {
+      right: auto;
+      left: 50%;
+      margin-left: 392px;
+    }
+  }

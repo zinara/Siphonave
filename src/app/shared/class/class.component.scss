@@ -1,0 +1,8 @@
+.example-container mat-form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }

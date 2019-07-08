@@ -4,9 +4,22 @@
     </mat-toolbar>
 
   <div class="container" >
-      <p>
-          This is the page for dump list
-        </p>
+    <div>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let link of links">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <a matLine [href]="link.link" target="_blank">{{ link.name }}</a>
+          </mat-panel-title>
+          <mat-panel-description>
+            {{link.tags}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        {{link.description}}
+      </mat-expansion-panel>
+      <mat-divider *ngIf="links > 0"></mat-divider>
+    </mat-accordion>
+  </div>
   </div>
 
 
