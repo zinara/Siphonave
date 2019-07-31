@@ -1,8 +1,20 @@
 export class Item {
-    constructor(
-    public link: '',
-    public name = '',
-    public description = '',
-    public tag: string[],
-    public date: Date) {}
+    public link: string;
+    public name: string;
+    public description: string;
+    public tag: string[];
+    public date: Date;
+}
+
+export class ItemClass {
+    public name: string;
+    public description: string;
+    public tag: string[];
+    public date: Date;
+    public children?: ChildItems[];
+}
+
+export class ChildItems {
+    public name?: string;
+    public link?: string;
 }

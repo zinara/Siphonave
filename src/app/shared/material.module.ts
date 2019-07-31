@@ -35,6 +35,7 @@ import {
   MatSortModule,
   MatTableModule,
   MatTabsModule,
+  MatTreeModule,
   MatStepperModule
 } from '@angular/material';
 import { ItemformComponent } from './itemform/itemform.component';
@@ -74,6 +75,7 @@ import { NewclassComponent } from './newclass.component';
     MatSortModule,
     MatTableModule,
     MatTabsModule,
+    MatTreeModule,
     MatStepperModule,
     CommonModule,
     BrowserModule,
@@ -116,9 +118,11 @@ import { NewclassComponent } from './newclass.component';
     MatSortModule,
     MatTableModule,
     MatTabsModule,
+    MatTreeModule,
     MatStepperModule,
     AddbuttonComponent,
-    NewclassComponent
+    NewclassComponent,
+    ReactiveFormsModule
   ],
   declarations: [AddbuttonComponent, ItemformComponent, ClassComponent, NewclassComponent],
 })

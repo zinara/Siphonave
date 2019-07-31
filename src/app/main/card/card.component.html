@@ -1,12 +1,94 @@
 <mat-toolbar color="primary" class="nav">
-    <mat-icon>class</mat-icon>
-    <span class=".mat-h3 .mat-subheading-2">{{title}}</span>
+  <mat-icon>class</mat-icon>
+  <span class=".mat-h3 .mat-subheading-2">{{title}}</span>
 </mat-toolbar>
 
-<div class="container" >
-    <p>
-        This is the page for dump cards
-      </p>
+<div *ngIf="cards == 0">
+  <span> Click the button to add Cards </span> 
+</div>
+
+<div class="container">
+  <mat-list *ngFor="let card of cards">
+    <mat-card mat-list-item class="card">
+      <mat-card-header class="card-header">
+        <mat-card-title class="card-title">
+          <button mat-icon-button (click)="toggleCard(card)">
+            <mat-icon>
+              {{arrowIcon}}
+            </mat-icon>
+          </button>
+          <span>{{card.name}}</span>
+        </mat-card-title>
+        <span class="example-spacer"></span>
+        <button mat-icon-button (click)="openAfterClick(card)">
+          <mat-icon>
+            add
+          </mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content class="card-body" *ngIf="card.isOpen">
+        <ul>
+          <li *ngFor="let child of card.children">
+            <a matLine [href]="child.link"> {{ child.name }} </a>
+          </li>
+        </ul>
+        <ng-container *ngIf="card.showForm">
+          <form [formGroup]="options">
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="name" #name placeholder="name" required>
+                    <button mat-button *ngIf="name.value" matSuffix mat-icon-button aria-label="Clear"
+                      (click)="name.value=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="link" #link placeholder="Link" required>
+                    <button mat-button *ngIf="link.value" matSuffix mat-icon-button aria-label="Clear"
+                      (click)="link.value=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </td>
+                <td><button mat-raised-button (click)="addItem(card,options.value); name.value=''; link.value='' "
+                    [disabled]="!options.valid">
+                    save</button></td>
+              </tr>
+            </table>
+          </form>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </mat-list>
+
+  <!-- <div>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let card of cards">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span>{{card.name}}</span>
+          </mat-panel-title>
+         <mat-panel-description>
+          <button mat-icon-button (click)="openAfterClick()">
+            <mat-icon>
+              add
+            </mat-icon>
+          </button> 
+          </mat-panel-description>
+          <span class="example-spacer"></span>
+
+        </mat-expansion-panel-header>
+        <mat-list *ngFor="let child of card.children">
+          <a mat-list-item matLine [href]="child.link" > {{ child.name }} </a>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-divider *ngIf="cards > 0"></mat-divider>
+    </mat-accordion>
+  </div> -->
 </div>
 
 <app-newclass></app-newclass>

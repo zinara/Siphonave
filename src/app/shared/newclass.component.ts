@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ClassComponent } from './class/class.component';
+import { ItemClass } from './itemform/item';
 
 @Component({
   selector: 'app-newclass',
@@ -13,14 +14,22 @@ import { ClassComponent } from './class/class.component';
 })
 export class NewclassComponent implements OnInit {
 
+  classResult: ItemClass[] = [];
+
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   openClassForm(): void {
-    const dialogRef = this.dialog.open(ClassComponent, {
-      width: '350px',
+    const dialogRef = this.dialog.open(ClassComponent, { width: '400px' });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.classResult.push(result);
+      } else {
+        dialogRef.close();
+      }
     });
     }
 

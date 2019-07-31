@@ -10,7 +10,7 @@ import { Item } from '../../shared/itemform/item';
 export class ListComponent implements OnInit, AfterViewInit {
 
   title = 'My List';
-  links: Item[] = [];
+  lists: Item[] = [];
 
   @ViewChild(AddbuttonComponent)
   private linker: AddbuttonComponent;
@@ -20,7 +20,7 @@ export class ListComponent implements OnInit, AfterViewInit {
    }
 
    ngAfterViewInit() {
-  this.links = this.linker.mainresult;
+  this.lists = this.linker.mainresult;
    }
 
   ngOnInit() {
