@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './shared/material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MainModule } from './main/main.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import {PreloadAllModules, RouterModule} from '@angular/router';
+import {LayoutModule} from './layout/layout.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -14,9 +13,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    MainModule
+    HttpClientModule,
+    RouterModule.forRoot([]),
+    // RouterModule.forRoot([], { preloadingStrategy: PreloadAllModules }),
+    LayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

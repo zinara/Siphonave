@@ -1,0 +1,50 @@
+.nav {
+    margin-top: -7px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+/* .card {
+  background-color: rgb(226, 222, 222);
+} */
+
+.card-header {
+  height: 50px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

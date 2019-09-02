@@ -1,0 +1,19 @@
+.example-container mat-form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+   // width: 100%;
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-top: 30px;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }

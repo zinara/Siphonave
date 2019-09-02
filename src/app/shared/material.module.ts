@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddbuttonComponent } from './addbutton.component';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -38,9 +36,7 @@ import {
   MatTreeModule,
   MatStepperModule
 } from '@angular/material';
-import { ItemformComponent } from './itemform/itemform.component';
-import { ClassComponent } from './class/class.component';
-import { NewclassComponent } from './newclass.component';
+
 
 @NgModule({
   imports: [
@@ -77,15 +73,9 @@ import { NewclassComponent } from './newclass.component';
     MatTabsModule,
     MatTreeModule,
     MatStepperModule,
-    CommonModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
+    CommonModule
   ],
-  entryComponents: [
-    ItemformComponent,
-    ClassComponent
-  ],
+
   exports: [
     MatAutocompleteModule,
     MatButtonModule,
@@ -120,10 +110,7 @@ import { NewclassComponent } from './newclass.component';
     MatTabsModule,
     MatTreeModule,
     MatStepperModule,
-    AddbuttonComponent,
-    NewclassComponent,
-    ReactiveFormsModule
   ],
-  declarations: [AddbuttonComponent, ItemformComponent, ClassComponent, NewclassComponent],
+  declarations: [],
 })
 export class MaterialModule { }

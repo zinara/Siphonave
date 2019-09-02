@@ -1,0 +1,33 @@
+ .example-container mat-form-field {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .example-container > * {
+   // width: 100%;
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-top: 30px;
+  } 
+  
+ 
+
+  .example-chip-list {
+    width: 100%;
+  }
+  
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+   form > * {
+   margin: 5px 0;
+  }
+  
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }

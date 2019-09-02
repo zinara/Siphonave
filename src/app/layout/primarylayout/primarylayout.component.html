@@ -1,0 +1,69 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">{{title}}</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+
+
+                 <mat-nav-list>
+
+                  <mat-list-item>
+                    <mat-icon matListIcon>view_headline</mat-icon>
+                    <span class="mat-title title">Siphonave</span>
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+ 
+                  <div class="subhead">
+                      <mat-list-item>
+                          <span class="mat-title">Siphon System</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <span class="mat-subheading-2">Introduction</span>
+                          </mat-list-item>
+                        <mat-list-item>
+                            <span class="mat-subheading-2">Understanding Siphonave</span>
+                          </mat-list-item>
+                  </div>
+
+            <mat-divider></mat-divider>
+
+                  <mat-list-item>
+                      <mat-icon matListIcon>home</mat-icon>
+                      <button mat-button (click)="snav.close()" >
+                            <a matLine  [routerLink]="['/home']">
+                          <span class="mat-subheading-1">Home</span></a></button>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <mat-icon matListIcon>view_list</mat-icon>
+                    <button mat-button (click)="snav.close()">
+                        <a matLine  [routerLink]="['/mylist']">
+                        <span class="mat-subheading-1">My List</span></a> </button>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListIcon>view_array</mat-icon>
+                  <button mat-button (click)="snav.close()">
+                      <a matLine  [routerLink]="['/mycards']">
+                      <span class="mat-subheading-1" >My Cards</span></a> </button>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>list_alt</mat-icon>
+                <button mat-button (click)="snav.close()">
+                    <a matLine  [routerLink]="['/surveys']">
+                    <span class="mat-subheading-1">Surveys</span></a> </button>
+            </mat-list-item>
+                </mat-nav-list> 
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <router-outlet> </router-outlet>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

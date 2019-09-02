@@ -1,0 +1,25 @@
+ <div class="container" >
+      <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div> 
+    <div>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let list of lists">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <a matLine [href]="list.link" target="_blank">{{ list.name }}</a>
+          </mat-panel-title>
+         <mat-panel-description>
+            {{list.tags}}
+          </mat-panel-description> 
+        </mat-expansion-panel-header>
+        {{list.description}}
+      </mat-expansion-panel>
+      <mat-divider *ngIf="lists > 0"></mat-divider>
+    </mat-accordion>
+  </div>
+  </div>
+
+
+<app-addbutton></app-addbutton>

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { ItemformComponent } from './itemform/itemform.component';
-import { Item } from './itemform/item';
+import { Item } from '../shared/item';
 
 @Component({
   selector: 'app-addbutton',
   template: `
-  <button mat-fab style="background-color:white; color: black" class="new-btn" (click)="openItemForm()">
+  <button mat-fab style="background-color:white; color: black" class="new-btn" [routerLink]="['/item', 'create']" routerLinkActive>
   <mat-icon class="mat-icon" aria-label="icon-button with an add icon">add</mat-icon>
 </button>
   `,
@@ -17,13 +15,13 @@ export class AddbuttonComponent implements OnInit {
    mainresult: Item[] = [];
 
 
-  constructor(private dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  openItemForm() {
-    const dialogRef = this.dialog.open(ItemformComponent, { width: '450px', autoFocus: true});
+ /* openItemForm() {
+    const dialogRef = this.dialog.open(ItemformComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
@@ -32,5 +30,6 @@ export class AddbuttonComponent implements OnInit {
         dialogRef.close();
       }
     });
-    }
+  } */
+
 }
